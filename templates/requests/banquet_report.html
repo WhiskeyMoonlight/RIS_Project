@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Max Price</title>
+    <link href="../../static/css/bootstrap.css" rel="stylesheet" type="text/css">
+
+    <style>
+        td {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div style="text-align: center">
+    <h2>{{ prod_title }}</h2>
+    <table style="margin: auto">
+        <tr class="tab_title">
+            <td>Дата проведения</td>
+            <td>Название зала</td>
+            <td>Начальная стоимость</td>
+            <td>Конечная стоимость</td>
+            <td>Фамилия ответственного менеджера</td>
+        </tr>
+        {% for order in orders %}
+            <tr>
+                <td>{{ order['orderDate'] }}</td>
+                <td>{{ order['hallName'] }}</td>
+                <td>{{ order['avans'] }}</td>
+                <td>{{ order['realPrice'] }}</td>
+                <td>{{ order['surname'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('main_menu') }}" class="btn btn-danger" role="button">В Главное Меню</a>
+</div>
+</body>
+</html>

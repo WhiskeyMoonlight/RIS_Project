@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Запросы</title>
+    <link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div style="text-align: center;">
+    <h2> Запросы </h2>
+    <a href="{{ url_for('bp_query.banquet_report') }}">
+        Составить отчёт о банкетах за выбранный месяц и год</a>
+    <br><br>
+    <a href="{{ url_for('bp_query.manager_report') }}">
+       Составить отчёт о работе менеджеров за выбранный месяц и год</a>
+    <br><br>
+    <a href="{{ url_for('bp_query.youngest_manager') }}">
+       Вывести данные о самом молодом менеджере</a>
+    <br><br>
+    <a href="{{ url_for('bp_query.manager_without_orders') }}">
+       Вывести данные о менеджере без заказов в выбранном месяце</a>
+    <br><br>
+    <a href="{{ url_for('main_menu') }}" class="btn btn-danger" role="button">В Главное Меню</a>
+</div>
+</body>
+</html>

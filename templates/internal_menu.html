@@ -1,0 +1,14 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
+    <p style="text-align: center">
+
+        <a href="{{ url_for('bp_query.query_menu') }}"> Работать с запросами... </a>
+        <br><br>
+        <a href=""> В Каталог </a>
+        <br><br>
+        <a role="button" class="btn btn-danger" href="/exit">Завершить сессию</a>
+    </p>
+
+{% endblock %}

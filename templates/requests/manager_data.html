@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Youngest manager</title>
+    <link href="../../static/css/bootstrap.css" rel="stylesheet" type="text/css">
+
+    <style>
+        td {
+            text-align: center;
+            margin-right: 10px;
+        }
+        tables {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<div style="text-align: center">
+    <h2> {{ prod_title }}</h2>
+    <table style="margin: auto">
+        <tr class="tab_title" style="text-align: center">
+            <td>Id</td>
+            <td>Имя</td>
+            <td>Фамилия</td>
+            <td>Дата устройства</td>
+            <td>Дата увольнения</td>
+            <td>Дата рождения</td>
+            <td>Возраст</td>
+        </tr>
+        {% for _manager in manager %}
+        <tr class="tab-content" style="text-align: center">
+            <td>{{ _manager['idmanager'] }}</td>
+            <td>{{ _manager['name'] }}</td>
+            <td>{{ _manager['surname'] }}</td>
+            <td>{{ _manager['employmentDate'] }}</td>
+            <td>{{ _manager['resignDate'] }}</td>
+            <td>{{ _manager['birthday'] }}</td>
+            <td>{{ _manager['Age'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('main_menu') }}" class="btn btn-danger" role="button">В Главное Меню</a>
+</div>
+</body>
+</html>

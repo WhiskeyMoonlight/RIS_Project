@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manager report</title>
+    <link href="../../static/css/bootstrap.css" rel="stylesheet" type="text/css">
+
+    <style>
+        td {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div style="text-align: center">
+    <h2> {{ prod_title }}</h2>
+    <table style="margin: auto">
+        <tr class="tab_title" style="text-align: center">
+            <td>Id менеджера</td>
+            <td>Фамилия</td>
+            <td>Общее количество принятых заказов</td>
+            <td>Общая сумма принятых заказов</td>
+        </tr>
+        {% for _manager in manager %}
+            <tr>
+                <td>{{ _manager['idmanager'] }}</td>
+                <td>{{ _manager['surname'] }}</td>
+                <td>{{ _manager['order_num'] }}</td>
+                <td>{{ _manager['full_price'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('main_menu') }}" class="btn btn-danger" role="button">В Главное Меню</a>
+</div>
+</body>
+</html>

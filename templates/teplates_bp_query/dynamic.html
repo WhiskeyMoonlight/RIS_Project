@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>supermarket</title>
+    <style>
+        div {
+            text-align: center;
+        }
+        table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <link href="sem2.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div>
+    <h2> {{prod_title}}</h2>
+    <table>
+        <tr class = "tab_title">
+            <td>Название</td>
+            <td>Единица измерения</td>
+            <td>Цена</td>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{product['prod_name']}}</td>
+            <td>{{product['prod_measure']}}</td>
+            <td>{{product['prod_price']}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>
